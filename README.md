@@ -8,3 +8,6 @@
 
 
 [komentorivi.txt](https://github.com/Redomy/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+
+
+asdasdasdasdasd
