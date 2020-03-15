@@ -1,0 +1,126 @@
+commit a9a5eb599de78e1d83c2fd5fc55fe8f82e1d71f1
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 14:48:12 2020 -0400
+
+    poistettu file1 renamed file22
+
+ tiedostoja/file1.txt                 | 0
+ tiedostoja/{file2.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 6ef6b1b97ec925597d1f26d7aa8329330d0771ef
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 14:41:48 2020 -0400
+
+    3 tiedostoa lisätty
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 1 +
+ tiedostoja/file3.txt | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit 2eabb1b87f0cd2ccd6da9b045b463c022d92d30b
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 10:32:59 2020 -0400
+
+    resetataan tehtävä
+
+ harjoittelua/file1.txt | 0
+ harjoittelua/file3.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 095cdd6205de1a9987a2d744bfce243a8bea8625
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 10:30:05 2020 -0400
+
+    eka.txt poistettu
+
+ eka.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit cbb17af52140f202f597c7c73b35230cc63c08a5
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 10:14:06 2020 -0400
+
+    file1, file3 committed
+
+ harjoittelua/file1.txt | 0
+ harjoittelua/file3.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 319e948712ef532bb0864e76b6c271b0e10b56c7
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 10:02:35 2020 -0400
+
+    muutoksia git add -p avulla
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit d02bd4d5ca116566d3de15bcc6b05bfe9b088e2b
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 09:59:37 2020 -0400
+
+    uudelleennimentä eka
+
+ eka.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 48363348d3ad6c99e39dd91dcf340d89dee76f02
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 09:58:19 2020 -0400
+
+    uudelleennimentä
+
+ tiedosto.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2f91d85f00f85b3ca65b09b1346ea29c6ec61bdf
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 09:56:07 2020 -0400
+
+    Poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit e2b3c6329765acc2b60f6a590f7556c13f058920
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 09:15:05 2020 -0400
+
+    muutoksia ja stuff.txt lisätty stuffista
+
+ kolmas.txt      | 1 +
+ stuff/stuff.txt | 1 +
+ toinen.txt      | 1 +
+ 3 files changed, 3 insertions(+)
+
+commit aaef1c78989dfe31b02389c069db83e2231f02bd
+Author: Onni Ovaskainen <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 09:12:33 2020 -0400
+
+    kolmas.txt lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c9958215ac5697b2f0ea307306abd2d5097770f4
+Author: Onni <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 09:02:39 2020 -0400
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit ccbdd7f02a5684964c15226990f2b5ba870def6b
+Author: Onni <onni.ovaskainen@helsinki.fi>
+Date:   Sun Mar 15 08:58:39 2020 -0400
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
