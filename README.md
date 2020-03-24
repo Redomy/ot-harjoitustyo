@@ -11,3 +11,6 @@
 
 
 asdasdasdasdasd
+
+vaatimusmäärittely:
+https://github.com/Redomy/ot-harjoitustyo/blob/master/Dokumentaatio/Vaatimusm%C3%A4%C3%A4rittely.txt
