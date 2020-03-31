@@ -1,6 +1,6 @@
-#Tetris#
+#Miinaharava#
 
-Aikomuksena on tehd‰ tetris peli. Peli ker‰‰ pisteit‰ ja ne voi tallentaa pelin loputtua tietokantaan, josta peli n‰ytt‰‰
+Aikomuksena on tehd‰ miinaharava peli. Peli ker‰‰ pisteit‰ ja ne voi tallentaa pelin loputtua tietokantaan, josta peli n‰ytt‰‰
 highscoreja pelaajalle.
 
 #K‰ytt‰j‰t
@@ -13,5 +13,5 @@ Pelill‰ on p‰‰valikko, josta voi aloittaa uuden pelin, muokata asetuksia tai kat
 
 #Toiminnallisuus
 
-K‰ytt‰j‰t voivat pelata klassista tetrist‰ ja tallentaa pisteens‰ muistiin tietokantaan. Alustavasti k‰ytt‰j‰t voi luoda oman tunnuksen
+K‰ytt‰j‰t voivat pelata klassista miinaharavaa ja tallentaa pisteens‰ muistiin tietokantaan. Alustavasti k‰ytt‰j‰t voi luoda oman tunnuksen
 ja kirjautua sille, mutta saatan tehd‰ sovelluksen myˆs ilman kirjautumista k‰ytt‰j‰lle, koska pelin luonne sen sallii.
