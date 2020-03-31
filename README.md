@@ -1,16 +1,7 @@
 # ot_harjoitustyo
 
-## *ohjelmistotekniikka kurssin* __harjoitustyö__
+## Miinaharava peli
 
 ###### eipä siinä muuta :)
 
-[gitlog.txt](https://github.com/Redomy/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-
-[komentorivi.txt](https://github.com/Redomy/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-
-asdasdasdasdasd
-
-vaatimusmäärittely:
-https://github.com/Redomy/ot-harjoitustyo/blob/master/Dokumentaatio/Vaatimusm%C3%A4%C3%A4rittely.txt
