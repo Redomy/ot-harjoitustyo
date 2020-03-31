@@ -2,6 +2,6 @@
 
 ## Miinaharava peli
 
-###### eipä siinä muuta :)
+###### Koitan saada Mavenin toimimaan seuraaville viikoille
 
 
