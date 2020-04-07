@@ -1,6 +1,8 @@
 
 
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,6 +30,29 @@ public class Minesweeper extends Application {
         return Minesweeper.height;
     }
     
+    public static List<Tile> getNeighbours(Tile tile){
+        List<Tile> neighbours = new ArrayList<>();
+        
+        int[] coordinates = new int[]{
+            -1, -1,  0, -1,   1, -1,
+            -1, 0,            1, 0,
+            -1, 1,   0, 1,    1, 1
+        };
+        for(int i = 0; i < coordinates.length; i++){
+            int dx = coordinates[i];
+            i++;
+            int dy = coordinates[i];
+            
+            int checkX = tile.getX() + dx;
+            int checkY = tile.getY() + dy;
+            
+            if(checkX >= 0 && checkX < xTiles && checkY >= 0 && checkY < yTiles){
+                neighbours.add(grid[checkX][checkY]);
+            }
+        }
+        return neighbours;
+    }
+    
     @Override
     public void start(Stage stage) {
         
@@ -40,8 +65,22 @@ public class Minesweeper extends Application {
                 boolean hasBomb = Math.random() < 0.2;
                 Tile tile = new Tile(x, y, hasBomb);
                 
+                
                 grid[x][y] = tile;
                 alusta.getChildren().add(tile);
+            }
+        }
+        
+        for(int y = 0; y < yTiles; y++){
+            for(int x = 0; x < xTiles; x++){
+                Tile tile = grid[x][y];
+                if(tile.bombStatus()){
+                    continue;
+                }
+                long bombsAround = getNeighbours(tile).stream().filter(t -> t.bombStatus()).count();
+                if(bombsAround > 0){
+                    tile.modifyText(String.valueOf(bombsAround));
+                }
             }
         }
         

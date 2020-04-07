@@ -15,6 +15,19 @@ public class Tile extends StackPane{
     private Rectangle nelio = new Rectangle(Minesweeper.getTileSize(), Minesweeper.getTileSize());
     private Text text = new Text();
     private boolean revealed;
+    
+    public int getX(){
+        return this.x;
+    }
+    public int getY(){
+        return this.y;
+    }
+    public boolean bombStatus(){
+        return this.hasBomb;
+    }
+    public void modifyText(String newText){
+        this.text.setText(newText);
+    }
     public Tile(int x, int y, boolean hasBomb){
         this.revealed = false;
         this.x = x;
@@ -33,14 +46,19 @@ public class Tile extends StackPane{
         
         setTranslateY(y * Minesweeper.getTileSize());
         setTranslateX(x * Minesweeper.getTileSize());
-        setOnMouseClicked(event -> Reveal());
+        setOnMouseClicked(event -> reveal());
     }
-    public void Reveal(){
+    public void reveal(){
         if(revealed){
             return;
-        }else{
-            revealed = true;
-            nelio.setFill(null);
+        }
+        if(this.bombStatus()){
+            System.exit(0);
+        }
+        revealed = true;
+        nelio.setFill(null);
+        if(this.text.getText().isEmpty()){
+            Minesweeper.getNeighbours(this).forEach(t -> t.reveal());
         }
     }
     
