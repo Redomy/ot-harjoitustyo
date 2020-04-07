@@ -8,7 +8,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class Tile extends StackPane{
+public class Tile extends StackPane {
     
     private int x;
     private int y;
@@ -17,34 +17,34 @@ public class Tile extends StackPane{
     private Text text = new Text();
     private boolean revealed;
     
-    public int getX(){
+    public int getX() {
         return this.x;
     }
-    public int getY(){
+    public int getY() {
         return this.y;
     }
-    public boolean bombStatus(){
+    public boolean bombStatus() {
         return this.hasBomb;
     }
-    public boolean revealStatus(){
+    public boolean revealStatus() {
         return this.revealed;
     }
-    public String getText(){
+    public String getText() {
         return this.text.getText();
     }
-    public void modifyText(String newText){
+    public void modifyText(String newText) {
         this.text.setText(newText);
     }
-    public Tile(int x, int y, boolean hasBomb){
+    public Tile(int x, int y, boolean hasBomb) {
         this.revealed = false;
         this.x = x;
-        this.y =y;
+        this.y = y;
         this.hasBomb = hasBomb;
         nelio.setStroke(Color.CRIMSON);
         nelio.setFill(Color.LIGHTSEAGREEN);
-        if(this.hasBomb == true){
+        if (this.hasBomb == true) {
             text.setText("X");
-        }else{
+        } else {
             text.setText("");
         }
         text.setFont(Font.font(16));
@@ -55,18 +55,18 @@ public class Tile extends StackPane{
         setTranslateX(x * Minesweeper.getTileSize());
         setOnMouseClicked(event -> reveal());
     }
-    public void reveal(){
-        if(revealed){
+    public void reveal() {
+        if (revealed) {
             return;
         }
-        if(this.bombStatus()){
+        if (this.bombStatus()) {
             this.revealed = true;
             nelio.setFill(Color.RED);
             System.exit(0);
         }
         revealed = true;
         nelio.setFill(null);
-        if(this.text.getText().isEmpty()){
+        if (this.text.getText().isEmpty()) {
             Minesweeper.getNeighbours(this).forEach(t -> t.reveal());
         }
     }

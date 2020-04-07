@@ -6,6 +6,7 @@ import java.util.List;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -20,25 +21,25 @@ public class Minesweeper extends Application {
     private static final int yTiles = height / tileSize;
     private static Tile[][] grid = new Tile[xTiles][yTiles];
     
-    public static int getTileSize(){
+    public static int getTileSize() {
         return Minesweeper.tileSize;
     }
-    public static int getWidth(){
+    public static int getWidth() {
         return Minesweeper.width;
     }
-    public static int getHeight(){
+    public static int getHeight() {
         return Minesweeper.height;
     }
     
-    public static List<Tile> getNeighbours(Tile tile){
+    public static List<Tile> getNeighbours(Tile tile) {
         List<Tile> neighbours = new ArrayList<>();
         
-        int[] coordinates = new int[]{
+        int[] coordinates = new int[] {
             -1, -1,  0, -1,   1, -1,
             -1, 0,            1, 0,
             -1, 1,   0, 1,    1, 1
         };
-        for(int i = 0; i < coordinates.length; i++){
+        for (int i = 0; i < coordinates.length; i++) {
             int dx = coordinates[i];
             i++;
             int dy = coordinates[i];
@@ -46,42 +47,46 @@ public class Minesweeper extends Application {
             int checkX = tile.getX() + dx;
             int checkY = tile.getY() + dy;
             
-            if(checkX >= 0 && checkX < xTiles && checkY >= 0 && checkY < yTiles){
+            if (checkX >= 0 && checkX < xTiles && checkY >= 0 && checkY < yTiles) {
                 neighbours.add(grid[checkX][checkY]);
             }
         }
         return neighbours;
     }
     
-    @Override
-    public void start(Stage stage) {
-       Pane alusta = new Pane();
+    private Pane setupGame() {
+        Pane alusta = new Pane();
         alusta.setPrefHeight(height);
         alusta.setPrefWidth(width);
         
-        for(int y = 0; y < yTiles; y++){
-            for(int x = 0; x < xTiles; x++){
+        for (int y = 0; y < yTiles; y++) {
+            for (int x = 0; x < xTiles; x++) {
                 boolean hasBomb = Math.random() < 0.2;
-                Tile tile = new Tile(x, y, hasBomb);
-                
+                Tile tile = new Tile(x, y, hasBomb);     
                 
                 grid[x][y] = tile;
                 alusta.getChildren().add(tile);
             }
         }
         
-        for(int y = 0; y < yTiles; y++){
-            for(int x = 0; x < xTiles; x++){
+        for (int y = 0; y < yTiles; y++) {
+            for (int x = 0; x < xTiles; x++) {
                 Tile tile = grid[x][y];
-                if(tile.bombStatus()){
+                if (tile.bombStatus()) {
                     continue;
                 }
                 long bombsAround = getNeighbours(tile).stream().filter(t -> t.bombStatus()).count();
-                if(bombsAround > 0){
+                if (bombsAround > 0) {
                     tile.modifyText(String.valueOf(bombsAround));
                 }
             }
         }
+        return alusta;
+    }
+    
+    @Override
+    public void start(Stage stage) {
+        Pane alusta = setupGame();
         
         Scene nakyma = new Scene(alusta);
         
