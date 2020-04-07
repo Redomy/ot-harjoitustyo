@@ -1,3 +1,6 @@
+package com.mycompany.minesweeper;
+
+import com.mycompany.minesweeper.Minesweeper;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -51,6 +54,7 @@ public class Tile extends StackPane{
             return;
         }
         if(this.bombStatus()){
+            nelio.setFill(Color.RED);
             System.exit(0);
         }
         revealed = true;

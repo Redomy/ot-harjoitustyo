@@ -1,3 +1,5 @@
+package com.mycompany.minesweeper;
+
 
 import java.util.ArrayList;
 import java.util.List;
