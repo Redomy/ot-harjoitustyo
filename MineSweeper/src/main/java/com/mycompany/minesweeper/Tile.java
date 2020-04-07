@@ -26,6 +26,12 @@ public class Tile extends StackPane{
     public boolean bombStatus(){
         return this.hasBomb;
     }
+    public boolean revealStatus(){
+        return this.revealed;
+    }
+    public String getText(){
+        return this.text.getText();
+    }
     public void modifyText(String newText){
         this.text.setText(newText);
     }
@@ -54,6 +60,7 @@ public class Tile extends StackPane{
             return;
         }
         if(this.bombStatus()){
+            this.revealed = true;
             nelio.setFill(Color.RED);
             System.exit(0);
         }
