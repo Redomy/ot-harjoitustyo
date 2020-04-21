@@ -3,6 +3,6 @@
 7.4     Sain mavenin ja javafxn toimimaan, lisäsin checkstylen ja junit testejä. Tietyt testit eivät vielä toimi jostain syystä, 
         mutta koitan saada asian korjattua. Pelin logiikka toimii ja se voidaan näyttää pelaajalle. Pelin loppuessa sovellus sulkeutuu
         itsestään. Tarkoituksena on lisätä tietokanta pisteille ja jonkinnäköinen main menu pelaajalle sekä viilailla pelin ulkoasua.
+pääsiäisloma - 21.4 Java ja sqlite toiminnallisuuden opettelua ja koodin parantamista.
         
-        
-Aikaa käytetty yhteensä noin 10 tuntia.
+Aikaa käytetty yhteensä noin 15 tuntia.
