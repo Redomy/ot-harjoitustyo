@@ -1,5 +1,6 @@
 package com.mycompany.minesweeper;
 
+import Minesweeper.ui.MinesweeperUI;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;

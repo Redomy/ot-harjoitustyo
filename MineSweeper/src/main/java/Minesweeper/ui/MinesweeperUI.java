@@ -1,6 +1,8 @@
 
-package com.mycompany.minesweeper;
+package Minesweeper.ui;
 
+import com.mycompany.minesweeper.Minesweeper;
+import com.mycompany.minesweeper.Tile;
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Insets;
 import javafx.application.Application;
