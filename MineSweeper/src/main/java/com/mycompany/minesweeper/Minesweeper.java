@@ -54,6 +54,13 @@ public class Minesweeper{
         Minesweeper.gameStatus = status;
     }
     
+    public static void addTestTile(Tile tile){
+        grid[tile.getX()][tile.getY()] = tile;
+    }
+    public static Tile getTile(int x, int y){
+        return grid[x][y];
+    }
+    
     public static List<Tile> getNeighbours(Tile tile) {
         List<Tile> neighbours = new ArrayList<>();
         
