@@ -1,6 +1,6 @@
 package com.mycompany.minesweeper;
 
-
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.application.Application;
@@ -13,7 +13,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Minesweeper extends Application {
+public class Minesweeper{
+    private static int score = 0;
     private static final int tileSize = 40;
     private static final int width = 800;
     private static final int height = 600;
@@ -29,6 +30,18 @@ public class Minesweeper extends Application {
     }
     public static int getHeight() {
         return Minesweeper.height;
+    }
+    public static int getScore(){
+        return Minesweeper.score;
+    }
+    public static void increaseScore(){
+        Minesweeper.score += 100;
+    }
+    public static int getXtiles() {
+        return Minesweeper.xTiles;
+    }
+    public static int getYtiles() {
+        return Minesweeper.yTiles;
     }
     
     public static List<Tile> getNeighbours(Tile tile) {
@@ -54,18 +67,14 @@ public class Minesweeper extends Application {
         return neighbours;
     }
     
-    private Pane setupGame() {
-        Pane alusta = new Pane();
-        alusta.setPrefHeight(height);
-        alusta.setPrefWidth(width);
+    public static void setupGame() {
         
         for (int y = 0; y < yTiles; y++) {
             for (int x = 0; x < xTiles; x++) {
                 boolean hasBomb = Math.random() < 0.2;
                 Tile tile = new Tile(x, y, hasBomb);     
-                
+                MinesweeperUI.addTile(tile);
                 grid[x][y] = tile;
-                alusta.getChildren().add(tile);
             }
         }
         
@@ -81,21 +90,5 @@ public class Minesweeper extends Application {
                 }
             }
         }
-        return alusta;
     }
-    
-    @Override
-    public void start(Stage stage) {
-        Pane alusta = setupGame();
-        
-        Scene nakyma = new Scene(alusta);
-        
-        stage.setScene(nakyma);
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
 }
