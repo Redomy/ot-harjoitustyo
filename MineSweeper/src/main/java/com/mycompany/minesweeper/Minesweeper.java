@@ -14,6 +14,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Minesweeper{
+    private static boolean gameStatus;
     private static int score = 0;
     private static final int tileSize = 40;
     private static final int width = 800;
@@ -37,11 +38,20 @@ public class Minesweeper{
     public static void increaseScore(){
         Minesweeper.score += 100;
     }
+    public static void refreshScore(){
+        Minesweeper.score = 0;
+    }
     public static int getXtiles() {
         return Minesweeper.xTiles;
     }
     public static int getYtiles() {
         return Minesweeper.yTiles;
+    }
+    public static boolean getStatus(){
+        return Minesweeper.gameStatus;
+    }
+    public static void changeStatus(boolean status){
+        Minesweeper.gameStatus = status;
     }
     
     public static List<Tile> getNeighbours(Tile tile) {

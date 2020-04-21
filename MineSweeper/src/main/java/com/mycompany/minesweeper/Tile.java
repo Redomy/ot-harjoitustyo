@@ -62,8 +62,12 @@ public class Tile extends StackPane {
         if (this.bombStatus()) {
             this.revealed = true;
             nelio.setFill(Color.RED);
-            System.exit(0);
+            Minesweeper.changeStatus(false);
+            return;
+//            System.exit(0);
+//            MinesweeperUI.startGame();
         }
+        Minesweeper.increaseScore();
         revealed = true;
         nelio.setFill(null);
         if (this.text.getText().isEmpty()) {
