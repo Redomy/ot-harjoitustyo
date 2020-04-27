@@ -1,6 +1,7 @@
 
 package Minesweeper.ui;
 
+import com.mycompany.minesweeper.DatabaseUser;
 import com.mycompany.minesweeper.Minesweeper;
 import com.mycompany.minesweeper.Tile;
 import javafx.animation.AnimationTimer;
@@ -35,10 +36,12 @@ public class MinesweeperUI extends Application {
     }
     
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws ClassNotFoundException{
         
         alusta = startGame();
         Scene scenePlay = new Scene(alusta);
+        DatabaseUser db = new DatabaseUser();
+        db.makeDatabase();
         
         BorderPane asettelu = new BorderPane();
         VBox menu = new VBox();
@@ -68,8 +71,6 @@ public class MinesweeperUI extends Application {
                 }
             }
         }.start();
-        
-       
 
         stage.setScene(sceneMenu);
         stage.show();
