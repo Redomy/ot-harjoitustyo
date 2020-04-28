@@ -18,3 +18,11 @@ mutta se on tarkoitus sijoittaa omaan pakkaukseen.
 Sovelluslogiikka:
 
 Sovelluslogiikkaan kuuluu luokat Minesweeper ja Tile.
+Minesweeper luokka hoitaa pelin alustan teknisen luomisen, solujen luomisen ja tarjoaa soluille
+myös tärkeän metodin niiden ympäristön selvittämiseksi.
+Tile luokka taas kuvaa pelin soluja ja se myös määrittää mitä tapahtuu sen ympäristön soluille tietyssä tilanteessa.
+
+Pysyväistalletus:
+
+Luokka DatabaseUser hoitaa tietokantaan tallentamisen ja lukemisen.
+Sovellus käyttää sqlite tietokantaa, johon tallennetaan nimiä ja pisteitä.
