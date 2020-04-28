@@ -15,7 +15,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Minesweeper{
-    private static boolean gameStatus;
+    private static boolean gameStatus = true;
     private static int score = 0;
     private static final int tileSize = 40;
     private static final int width = 800;

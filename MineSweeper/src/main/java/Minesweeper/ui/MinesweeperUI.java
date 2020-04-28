@@ -16,7 +16,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -27,10 +29,10 @@ public class MinesweeperUI extends Application {
     private DatabaseUser db;
     private static Pane alusta = new Pane();
     private static Text teksti = new Text("");
-//    private static Scene scenePlay = new Scene(alusta);
-//    private Scene scene = new Scene(alusta);
-//    private BorderPane scoreMenu = new BorderPane();
-//    ArrayList<Text> texts = new ArrayList<>();
+    private Button save;
+    private String player;
+    private TextField nameField;
+    
     public static void addTile(Tile tile){
         alusta.getChildren().add(tile);
     }
@@ -65,25 +67,30 @@ public class MinesweeperUI extends Application {
         root.setCenter(scorelist);
         return root;
     }
+    public BorderPane makeGameOverPane(){
+        BorderPane root = new BorderPane();
+        root.setPrefHeight(Minesweeper.getHeight());
+        root.setPrefWidth(Minesweeper.getWidth());
+        HBox hbox = new HBox();
+        teksti.setText("You got " + Minesweeper.getScore() + " points!");
+        Text teksti2 = new Text(" Name: ");
+        nameField = new TextField();
+        save = new Button("Save");
+        player = nameField.getText();
+        hbox.getChildren().addAll(teksti, teksti2, nameField, save);
+        root.setCenter(hbox);
+        return root;
+    }
     
     @Override
     public void start(Stage stage) throws ClassNotFoundException{
         
-//        alusta = startGame();
-//        Scene scenePlay = new Scene(alusta);
         db = new DatabaseUser();
         db.makeDatabase();
-        
-        
-        BorderPane asettelu = new BorderPane();
-        VBox menu = new VBox();
-        menu.setSpacing(20);
-        
         
         Button play = new Button("Play");
         Button scores = new Button("Highscores");
         Button quit = new Button("Quit");
-        
         
         play.setOnAction(event -> {
                         Minesweeper.changeStatus(true);
@@ -92,6 +99,7 @@ public class MinesweeperUI extends Application {
                         Scene scenePlay2 = new Scene(alusta);
                         stage.setScene(scenePlay2);
                         });
+        
         scores.setOnAction(event -> {
             try {
                 BorderPane root = makeScorePane();
@@ -106,20 +114,33 @@ public class MinesweeperUI extends Application {
             });
         
         quit.setOnAction(event -> System.exit(0));
-        menu.getChildren().addAll(teksti, play, scores, quit);
+        
+        VBox menu = new VBox();
+        menu.setSpacing(20);
+        menu.getChildren().addAll(play, scores, quit);
+        
+        BorderPane asettelu = new BorderPane();
         asettelu.setTop(menu);
         asettelu.setPrefSize(Minesweeper.getWidth(), Minesweeper.getHeight());
         asettelu.setPadding(new Insets(20, 20, 20, 20));
         
         Scene sceneMenu = new Scene(asettelu);
-        
-        
-        
+
         new AnimationTimer(){
             public void handle(long nykyhetki){
                 if(Minesweeper.getStatus() == false){
-                    teksti.setText("You got " + Minesweeper.getScore() + " points!");
-                    stage.setScene(sceneMenu);
+                    BorderPane root = makeGameOverPane();
+                    save.setOnAction(event -> {
+                        try {
+                            player = nameField.getText();
+                            db.WriteDatabase(player, Minesweeper.getScore());
+                        } catch (ClassNotFoundException ex) {
+                            Logger.getLogger(MinesweeperUI.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        stage.setScene(sceneMenu);
+                    });
+                    Scene gameOverScene = new Scene(root);
+                    stage.setScene(gameOverScene);
                     Minesweeper.changeStatus(true);
                 }
             }
