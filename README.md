@@ -9,7 +9,7 @@ tallentaa tuloksensa tietokantaan haluamallaan nimellä varustettuna.
 ## Komentorivitoiminnot
 Kaikki komennot suoritetaan MineSweeper kansiosta.
 
-###### Testaus
+### Testaus
 Testit voi suorittaa komennolla:
 mvn test
 
@@ -18,11 +18,11 @@ mvn jacoco:report
 
 Kattavuusraportin voi katsoa selaimella avaamalla tiedoston target/site/jacoco/index.html
 
-###### Suoritettava jar
+### Suoritettava jar
 Suoritettava jar generoidaan komennolla:
 mvn package
 
-###### Checkstyle
+### Checkstyle
 Checkstylen tarkistukset suoritetaan komennolla:
 mvn jxr:jxr checkstyle:checkstyle
 
