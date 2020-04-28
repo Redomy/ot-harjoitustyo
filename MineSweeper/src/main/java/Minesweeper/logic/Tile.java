@@ -1,6 +1,6 @@
-package com.mycompany.minesweeper;
+package Minesweeper.logic;
 
-import com.mycompany.minesweeper.Minesweeper;
+import Minesweeper.logic.Minesweeper;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -13,7 +13,7 @@ public class Tile extends StackPane {
     private int x;
     private int y;
     private boolean hasBomb;
-    private Rectangle nelio = new Rectangle(Minesweeper.getTileSize(), Minesweeper.getTileSize());
+    private Rectangle sqr = new Rectangle(Minesweeper.getTileSize(), Minesweeper.getTileSize());
     private Text text = new Text();
     private boolean revealed;
     
@@ -40,8 +40,8 @@ public class Tile extends StackPane {
         this.x = x;
         this.y = y;
         this.hasBomb = hasBomb;
-        nelio.setStroke(Color.CRIMSON);
-        nelio.setFill(Color.LIGHTSEAGREEN);
+        sqr.setStroke(Color.CRIMSON);
+        sqr.setFill(Color.BLACK);
         if (this.hasBomb == true) {
             text.setText("X");
         } else {
@@ -49,7 +49,7 @@ public class Tile extends StackPane {
         }
         text.setFont(Font.font(16));
         getChildren().add(text);
-        getChildren().add(nelio);
+        getChildren().add(sqr);
         
         setTranslateY(y * Minesweeper.getTileSize());
         setTranslateX(x * Minesweeper.getTileSize());
@@ -61,15 +61,13 @@ public class Tile extends StackPane {
         }
         if (this.bombStatus()) {
             this.revealed = true;
-            nelio.setFill(Color.RED);
+            sqr.setFill(Color.RED);
             Minesweeper.changeStatus(false);
             return;
-//            System.exit(0);
-//            MinesweeperUI.startGame();
         }
         Minesweeper.increaseScore();
         revealed = true;
-        nelio.setFill(null);
+        sqr.setFill(null);
         if (this.text.getText().isEmpty()) {
             Minesweeper.getNeighbours(this).forEach(t -> t.reveal());
         }

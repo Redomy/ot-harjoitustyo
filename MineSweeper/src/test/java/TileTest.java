@@ -1,6 +1,6 @@
 
 
-import com.mycompany.minesweeper.Tile;
+import Minesweeper.logic.Tile;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

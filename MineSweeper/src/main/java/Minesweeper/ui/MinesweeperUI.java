@@ -1,9 +1,8 @@
 
 package Minesweeper.ui;
 
-import com.mycompany.minesweeper.DatabaseUser;
-import com.mycompany.minesweeper.Minesweeper;
-import com.mycompany.minesweeper.Tile;
+import Minesweeper.logic.Minesweeper;
+import Minesweeper.logic.Tile;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,22 +26,22 @@ import javafx.stage.Stage;
 
 public class MinesweeperUI extends Application {
     private DatabaseUser db;
-    private static Pane alusta = new Pane();
-    private static Text teksti = new Text("");
+    private static Pane base = new Pane();
+    private static Text text = new Text("");
     private Button save;
     private String player;
     private TextField nameField;
     private Button menuButton;
     
     public static void addTile(Tile tile){
-        alusta.getChildren().add(tile);
+        base.getChildren().add(tile);
     }
     public static Pane startGame(){
-        alusta = new Pane();
-        alusta.setPrefHeight(Minesweeper.getHeight());
-        alusta.setPrefWidth(Minesweeper.getWidth());
+        base = new Pane();
+        base.setPrefHeight(Minesweeper.getHeight());
+        base.setPrefWidth(Minesweeper.getWidth());
         Minesweeper.setupGame();
-        return alusta;
+        return base;
     }
     public BorderPane makeScorePane() throws ClassNotFoundException, SQLException{
         BorderPane root = new BorderPane();
@@ -75,12 +74,12 @@ public class MinesweeperUI extends Application {
         root.setPrefHeight(Minesweeper.getHeight());
         root.setPrefWidth(Minesweeper.getWidth());
         HBox hbox = new HBox();
-        teksti.setText("You got " + Minesweeper.getScore() + " points!");
-        Text teksti2 = new Text(" Name: ");
+        text.setText("You got " + Minesweeper.getScore() + " points!");
+        Text text2 = new Text(" Name: ");
         nameField = new TextField();
         save = new Button("Save");
         player = nameField.getText();
-        hbox.getChildren().addAll(teksti, teksti2, nameField, save);
+        hbox.getChildren().addAll(text, text2, nameField, save);
         root.setCenter(hbox);
         return root;
     }
@@ -98,8 +97,8 @@ public class MinesweeperUI extends Application {
         play.setOnAction(event -> {
                         Minesweeper.changeStatus(true);
                         Minesweeper.refreshScore();
-                        alusta = startGame();
-                        Scene scenePlay2 = new Scene(alusta);
+                        base = startGame();
+                        Scene scenePlay2 = new Scene(base);
                         stage.setScene(scenePlay2);
                         });
 
@@ -109,12 +108,12 @@ public class MinesweeperUI extends Application {
         menu.setSpacing(20);
         menu.getChildren().addAll(play, scores, quit);
         
-        BorderPane asettelu = new BorderPane();
-        asettelu.setTop(menu);
-        asettelu.setPrefSize(Minesweeper.getWidth(), Minesweeper.getHeight());
-        asettelu.setPadding(new Insets(20, 20, 20, 20));
+        BorderPane layout = new BorderPane();
+        layout.setTop(menu);
+        layout.setPrefSize(Minesweeper.getWidth(), Minesweeper.getHeight());
+        layout.setPadding(new Insets(20, 20, 20, 20));
         
-        Scene sceneMenu = new Scene(asettelu);
+        Scene sceneMenu = new Scene(layout);
         
         scores.setOnAction(event -> {
             try {
@@ -132,7 +131,7 @@ public class MinesweeperUI extends Application {
             });
 
         new AnimationTimer(){
-            public void handle(long nykyhetki){
+            public void handle(long currentTime){
                 if(Minesweeper.getStatus() == false){
                     BorderPane root = makeGameOverPane();
                     save.setOnAction(event -> {

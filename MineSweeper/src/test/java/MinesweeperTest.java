@@ -5,8 +5,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import com.mycompany.minesweeper.Tile;
-import com.mycompany.minesweeper.Minesweeper;
+import Minesweeper.logic.Tile;
+import Minesweeper.logic.Minesweeper;
 
 public class MinesweeperTest {
     
@@ -64,6 +64,14 @@ public class MinesweeperTest {
     @Test
     public void setupGame(){
         Minesweeper.setupGame();
+        for (int y = 0; y < Minesweeper.getYtiles(); y++) {
+            for (int x = 0; x < Minesweeper.getXtiles(); x++){
+                if(Minesweeper.getTile(x, y) == null){
+                    assertEquals(false, true);
+                    return;
+                }
+            }
+        }
         assertEquals(true, true);
     }
 }

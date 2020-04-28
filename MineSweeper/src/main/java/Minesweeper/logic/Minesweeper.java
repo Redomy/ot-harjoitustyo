@@ -1,4 +1,4 @@
-package com.mycompany.minesweeper;
+package Minesweeper.logic;
 
 import Minesweeper.ui.MinesweeperUI;
 import java.sql.Connection;
