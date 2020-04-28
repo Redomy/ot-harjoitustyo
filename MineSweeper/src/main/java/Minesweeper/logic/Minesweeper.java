@@ -33,13 +33,13 @@ public class Minesweeper{
     public static int getHeight() {
         return Minesweeper.height;
     }
-    public static int getScore(){
+    public static int getScore() {
         return Minesweeper.score;
     }
-    public static void increaseScore(){
+    public static void increaseScore() {
         Minesweeper.score += 100;
     }
-    public static void refreshScore(){
+    public static void refreshScore() {
         Minesweeper.score = 0;
     }
     public static int getXtiles() {
@@ -48,17 +48,17 @@ public class Minesweeper{
     public static int getYtiles() {
         return Minesweeper.yTiles;
     }
-    public static boolean getStatus(){
+    public static boolean getStatus() {
         return Minesweeper.gameStatus;
     }
-    public static void changeStatus(boolean status){
+    public static void changeStatus(boolean status) {
         Minesweeper.gameStatus = status;
     }
     
-    public static void addTestTile(Tile tile){
+    public static void addTestTile(Tile tile) {
         grid[tile.getX()][tile.getY()] = tile;
     }
-    public static Tile getTile(int x, int y){
+    public static Tile getTile(int x, int y) {
         return grid[x][y];
     }
     

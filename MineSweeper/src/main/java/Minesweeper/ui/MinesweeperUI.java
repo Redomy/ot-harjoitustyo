@@ -33,17 +33,17 @@ public class MinesweeperUI extends Application {
     private TextField nameField;
     private Button menuButton;
     
-    public static void addTile(Tile tile){
+    public static void addTile(Tile tile) {
         base.getChildren().add(tile);
     }
-    public static Pane startGame(){
+    public static Pane startGame() {
         base = new Pane();
         base.setPrefHeight(Minesweeper.getHeight());
         base.setPrefWidth(Minesweeper.getWidth());
         Minesweeper.setupGame();
         return base;
     }
-    public BorderPane makeScorePane() throws ClassNotFoundException, SQLException{
+    public BorderPane makeScorePane() throws ClassNotFoundException, SQLException {
         BorderPane root = new BorderPane();
         root.setPrefHeight(Minesweeper.getHeight());
         root.setPrefWidth(Minesweeper.getWidth());
@@ -60,7 +60,7 @@ public class MinesweeperUI extends Application {
         texts.add(text4);
         texts.add(text5);
         ArrayList<String> results = db.getHighScores();
-        for(int i = 0; i < results.size(); i++){
+        for (int i = 0; i < results.size(); i++) {
             texts.get(i).setText(results.get(i));
         }
         menuButton = new Button("Back to menu");
@@ -69,7 +69,7 @@ public class MinesweeperUI extends Application {
         root.setCenter(scorelist);
         return root;
     }
-    public BorderPane makeGameOverPane(){
+    public BorderPane makeGameOverPane() {
         BorderPane root = new BorderPane();
         root.setPrefHeight(Minesweeper.getHeight());
         root.setPrefWidth(Minesweeper.getWidth());
@@ -85,7 +85,7 @@ public class MinesweeperUI extends Application {
     }
     
     @Override
-    public void start(Stage stage) throws ClassNotFoundException{
+    public void start(Stage stage) throws ClassNotFoundException {
         
         db = new DatabaseUser();
         db.makeDatabase();
@@ -95,12 +95,12 @@ public class MinesweeperUI extends Application {
         Button quit = new Button("Quit");
         
         play.setOnAction(event -> {
-                        Minesweeper.changeStatus(true);
-                        Minesweeper.refreshScore();
-                        base = startGame();
-                        Scene scenePlay2 = new Scene(base);
-                        stage.setScene(scenePlay2);
-                        });
+            Minesweeper.changeStatus(true);
+            Minesweeper.refreshScore();
+            base = startGame();
+            Scene scenePlay2 = new Scene(base);
+            stage.setScene(scenePlay2);
+        });
 
         quit.setOnAction(event -> System.exit(0));
         
@@ -128,16 +128,16 @@ public class MinesweeperUI extends Application {
             } catch (SQLException ex) {
                 Logger.getLogger(MinesweeperUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-            });
+        });
 
-        new AnimationTimer(){
-            public void handle(long currentTime){
-                if(Minesweeper.getStatus() == false){
+        new AnimationTimer() {
+            public void handle(long currentTime) {
+                if (Minesweeper.getStatus() == false) {
                     BorderPane root = makeGameOverPane();
                     save.setOnAction(event -> {
                         try {
                             player = nameField.getText();
-                            db.WriteDatabase(player, Minesweeper.getScore());
+                            db.writeDatabase(player, Minesweeper.getScore());
                         } catch (ClassNotFoundException ex) {
                             Logger.getLogger(MinesweeperUI.class.getName()).log(Level.SEVERE, null, ex);
                         }
