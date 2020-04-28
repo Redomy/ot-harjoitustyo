@@ -32,6 +32,7 @@ public class MinesweeperUI extends Application {
     private Button save;
     private String player;
     private TextField nameField;
+    private Button menuButton;
     
     public static void addTile(Tile tile){
         alusta.getChildren().add(tile);
@@ -63,7 +64,9 @@ public class MinesweeperUI extends Application {
         for(int i = 0; i < results.size(); i++){
             texts.get(i).setText(results.get(i));
         }
-        scorelist.getChildren().addAll(text1, text2, text3, text4, text5);
+        menuButton = new Button("Back to menu");
+        
+        scorelist.getChildren().addAll(text1, text2, text3, text4, text5, menuButton);
         root.setCenter(scorelist);
         return root;
     }
@@ -99,20 +102,7 @@ public class MinesweeperUI extends Application {
                         Scene scenePlay2 = new Scene(alusta);
                         stage.setScene(scenePlay2);
                         });
-        
-        scores.setOnAction(event -> {
-            try {
-                BorderPane root = makeScorePane();
-                Scene scoreScene = new Scene(root);
-                stage.setScene(scoreScene);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(MinesweeperUI.class.getName()).log(Level.SEVERE, null, ex);
-                System.out.println("Virhe");
-            } catch (SQLException ex) {
-                Logger.getLogger(MinesweeperUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            });
-        
+
         quit.setOnAction(event -> System.exit(0));
         
         VBox menu = new VBox();
@@ -125,6 +115,21 @@ public class MinesweeperUI extends Application {
         asettelu.setPadding(new Insets(20, 20, 20, 20));
         
         Scene sceneMenu = new Scene(asettelu);
+        
+        scores.setOnAction(event -> {
+            try {
+                BorderPane root = makeScorePane();
+                Scene scoreScene = new Scene(root);
+                stage.setScene(scoreScene);
+                menuButton.setOnAction(e -> {
+                        stage.setScene(sceneMenu);
+                });
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(MinesweeperUI.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(MinesweeperUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            });
 
         new AnimationTimer(){
             public void handle(long nykyhetki){
