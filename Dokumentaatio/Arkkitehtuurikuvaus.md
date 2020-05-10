@@ -1,7 +1,6 @@
 # Rakenne:
 
-tällä hetkellä sovelluksen pakkausrakenteessa on kaksi pakkausta Minesweeper.ui ja Minesweeper.logic.
-Tarkoituksena on lisätä vielä yksi pakkaus tietokantoja ja pysyväistalletusta hoitavalle koodille.
+tällä hetkellä sovelluksen pakkausrakenteessa on kolme pakkausta Minesweeper.ui ja Minesweeper.logic sekä Minesweeper.database.
 
 # Käyttöliittymä:
 
