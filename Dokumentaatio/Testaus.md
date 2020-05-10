@@ -12,6 +12,8 @@ implementoida tietokannalle testejä.
 
 ### Testauskattavuus
 
+![Testauskattavuus](Testauskattavuus.png)
+
 ## Järjestelmätestaus
 Järjestelmätestaus on suoritettu manuaalisesti. 
 Kaikki sovelluksen toiminnallisuudet on käyty läpi ja sovelluksen tietokantapuolta
