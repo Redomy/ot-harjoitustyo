@@ -61,7 +61,12 @@ public class Minesweeper{
     public static Tile getTile(int x, int y) {
         return grid[x][y];
     }
-    
+    /*
+    *Metodi, joka haravoi tietyn ruudun ympäristön
+    *
+    *@param  tile   ruutu,jonka ympäristö tarkistetaan
+    *@return        lista, ruutua ympäröivistä ruuduista
+    */
     public static List<Tile> getNeighbours(Tile tile) {
         List<Tile> neighbours = new ArrayList<>();
         
@@ -84,7 +89,11 @@ public class Minesweeper{
         }
         return neighbours;
     }
-    
+    /*
+    *Metodi, joka alustaa pelin ja ruudukon
+    *
+    *@return null
+    */
     public static void setupGame() {
         
         for (int y = 0; y < yTiles; y++) {

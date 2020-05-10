@@ -37,7 +37,7 @@ public class MinesweeperUI extends Application {
     private Button menuButton;
     private static Rectangle[][] grid = new Rectangle[Minesweeper.getXtiles()][Minesweeper.getYtiles()];
     
-    public static void reveal(int x, int y){
+    public static void reveal(int x, int y) {
         Rectangle square = grid[x][y];
         square.setFill(null);
     }
