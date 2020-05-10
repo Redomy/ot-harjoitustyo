@@ -17,3 +17,6 @@ Järjestelmätestaus on suoritettu manuaalisesti.
 Kaikki sovelluksen toiminnallisuudet on käyty läpi ja sovelluksen tietokantapuolta
 on testattu eri tilanteissa, kuten jos tietokantaa ei ole vielä tehty verrattuna
 siihen, että se olisi jo valmiiksi luotu.
+
+## Rajoitukset
+Sovelluksen tietokantapuolella ei ole hyviä testejä.
