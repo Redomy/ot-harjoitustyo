@@ -31,6 +31,7 @@ Tile luokka taas kuvaa pelin soluja ja se myös määrittää mitä tapahtuu sen
     
 #### Luokka/pakkauskaavio sovelluksen eri osista:
 
+![Pakkauskaavio](Pakkauskaavio.png)
 
 # Pysyväistalletus:
 
@@ -44,10 +45,14 @@ Sovelluksen käynnistyessä kutsutaan DatabaserUserin metodia makeDatabase(), jo
 luo sqlite tietokannan Scores, jos sitä ei ole vielä luotu. Samalle se myös luo Scores
 taulun, johon pisteet ja pelaajan nimet tallennetaan.
 
+![Tietokannan teko](makeDatabaser.png)
+
 #### Tietokantaan tallentaminen:
 Pelin päättyessä pelaaja voi tallentaa pisteensä tietokantaan. Save-nappia
 painettaessa kutsutaan DatabaserUser luokan metodia writeDatabase, jossa 
 parametreina annetaan pelaajan nimi ja pisteet. Metodi ei palauta mitään.
+
+![Tietokantaan tallentaminen](writeDatabase.png)
 
 #### Huippupisteiden luku tietokannasta
 Highscore-nappia painettaessa kutsutaan DatabaserUser luokan metodia getHighScores,
