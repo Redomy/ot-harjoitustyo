@@ -37,4 +37,18 @@ Tile luokka taas kuvaa pelin soluja ja se myös määrittää mitä tapahtuu sen
 Luokka DatabaseUser hoitaa tietokantaan tallentamisen ja lukemisen.
 Sovellus käyttää sqlite tietokantaa, johon tallennetaan nimiä ja pisteitä.
 
+### Päätoiminnallisuudet:
 
+#### Tietokannan teko:
+Sovelluksen käynnistyessä kutsutaan DatabaserUserin metodia makeDatabase(), joka
+luo sqlite tietokannan Scores, jos sitä ei ole vielä luotu. Samalle se myös luo Scores
+taulun, johon pisteet ja pelaajan nimet tallennetaan.
+
+#### Tietokantaan tallentaminen:
+Pelin päättyessä pelaaja voi tallentaa pisteensä tietokantaan. Save-nappia
+painettaessa kutsutaan DatabaserUser luokan metodia writeDatabase, jossa 
+parametreina annetaan pelaajan nimi ja pisteet. Metodi ei palauta mitään.
+
+#### Huippupisteiden luku tietokannasta
+Highscore-nappia painettaessa kutsutaan DatabaserUser luokan metodia getHighScores,
+joka palauttaa ArrayListinä viisi parasta tulosta. Nämä sitten näytetään pelaajalle.
