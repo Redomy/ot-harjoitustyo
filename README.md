@@ -20,19 +20,19 @@ Testit voi suorittaa komennolla:
 
 Testikattavuusraportti luodaan komennolla:
 
-#### mvn jacoco:report
+    mvn jacoco:report
 
 Kattavuusraportin voi katsoa selaimella avaamalla tiedoston target/site/jacoco/index.html
 
 ### Suoritettava jar
 Suoritettava jar generoidaan komennolla:
 
-#### mvn package
+    mvn package
 
 ### Checkstyle
 Checkstylen tarkistukset suoritetaan komennolla:
 
-#### mvn jxr:jxr checkstyle:checkstyle
+    mvn jxr:jxr checkstyle:checkstyle
 Jos haluat nähdä mahdolliset checkstyle virheet, avaa selaimella tiedosto: target/site/checkstyle.html
 
 ### Javadoc
