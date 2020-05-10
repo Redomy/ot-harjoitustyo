@@ -5,10 +5,11 @@ Tarkoituksena on lisätä vielä yksi pakkaus tietokantoja ja pysyväistalletust
 
 # Käyttöliittymä:
 
-Sovellukseni käyttöliittymässä on kolme eri näkymää:
+Sovellukseni käyttöliittymässä on neljä eri näkymää:
 - Miinaharavan peli näkymä
 - Päävalikon näkymä
 - Parhaitten pisteiden näkymä
+- Pelin tulos näkymä
 
 Näkymät on toteutettu Scene olioina ja ne liitetään sovelluksen Stage olioon.
 Käyttöliittymä on toteutettu luokassa Minesweeper.ui.MinesweeperUI.
