@@ -23,7 +23,18 @@ Minesweeper luokka hoitaa pelin alustan teknisen luomisen, solujen luomisen ja t
 myös tärkeän metodin niiden ympäristön selvittämiseksi.
 Tile luokka taas kuvaa pelin soluja ja se myös määrittää mitä tapahtuu sen ympäristön soluille tietyssä tilanteessa.
 
+#### Luokan Minesweeper tarjoamia toiminnallisuuksia:
+- setupGame()
+    Alustaa pelin luoden ruudukon ja sen ominaisuudet
+- getNeighbours(Tile tile)
+    Haravoi tietyn ruudun ympäristön ja palauttaa listan naapuriruuduista
+    
+#### Luokka/pakkauskaavio sovelluksen eri osista:
+
+
 # Pysyväistalletus:
 
 Luokka DatabaseUser hoitaa tietokantaan tallentamisen ja lukemisen.
 Sovellus käyttää sqlite tietokantaa, johon tallennetaan nimiä ja pisteitä.
+
+
