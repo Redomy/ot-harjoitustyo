@@ -9,28 +9,29 @@ tallentaa tuloksensa tietokantaan haluamallaan nimellä varustettuna.
 ### [Vaatimusmäärittely](https://github.com/Redomy/ot-harjoitustyo/blob/master/Dokumentaatio/Vaatimusm%C3%A4%C3%A4rittely.txt)
 ### [Arkkitehtuurikuvaus](https://github.com/Redomy/ot-harjoitustyo/blob/master/Dokumentaatio/Arkkitehtuurikuvaus)
 ### [Työaikakirjanpito](https://github.com/Redomy/ot-harjoitustyo/blob/master/Dokumentaatio/Ty%C3%B6aikakirjanpito)
+### [Testauskattavuus](https://github.com/Redomy/ot-harjoitustyo/blob/master/Dokumentaatio/Testaus.md)
 ## Komentorivitoiminnot
 Kaikki komennot suoritetaan MineSweeper kansiosta.
 
 ### Testaus
 Testit voi suorittaa komennolla:
 
-##### mvn test
+#### mvn test
 
 Testikattavuusraportti luodaan komennolla:
 
-##### mvn jacoco:report
+#### mvn jacoco:report
 
 Kattavuusraportin voi katsoa selaimella avaamalla tiedoston target/site/jacoco/index.html
 
 ### Suoritettava jar
 Suoritettava jar generoidaan komennolla:
 
-##### mvn package
+#### mvn package
 
 ### Checkstyle
 Checkstylen tarkistukset suoritetaan komennolla:
 
-##### mvn jxr:jxr checkstyle:checkstyle
+#### mvn jxr:jxr checkstyle:checkstyle
 
 Jos haluat nähdä mahdolliset checkstyle virheet, avaa selaimella tiedosto: target/site/checkstyle.html
