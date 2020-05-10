@@ -8,8 +8,10 @@ highscoreja pelaajalle.
 Sovelluksella on vain normaaleja käyttäjiä. Ei kuitenkaan kirjautumisvaihtoehtoa.
 
 # Käyttöliittymä
-
 Pelillä on päävalikko, josta voi aloittaa uuden pelin tai katsoa parhaita pisteitä.
+### Käyttöliittymäluonnos
+
+![Näkymärakenne](Näkymärakenne.png)
 
 # Toiminnallisuus
 
