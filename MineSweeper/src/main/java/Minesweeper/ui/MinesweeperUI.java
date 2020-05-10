@@ -21,6 +21,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -32,9 +34,25 @@ public class MinesweeperUI extends Application {
     private String player;
     private TextField nameField;
     private Button menuButton;
+    private static Rectangle[][] grid = new Rectangle[Minesweeper.getXtiles()][Minesweeper.getYtiles()];
     
+    public static void reveal(int x, int y){
+        Rectangle square = grid[x][y];
+        square.setFill(null);
+    }
     public static void addTile(Tile tile) {
-        base.getChildren().add(tile);
+        StackPane tile2 = new StackPane();
+        tile2.setTranslateX(tile.getX() * Minesweeper.getTileSize());
+        tile2.setTranslateY(tile.getY() * Minesweeper.getTileSize());
+        Text text = new Text(tile.getText());
+        Rectangle sqr = new Rectangle(Minesweeper.getTileSize(), Minesweeper.getTileSize());
+        sqr.setStroke(Color.CRIMSON);
+        sqr.setFill(Color.BLACK);
+        tile2.getChildren().add(text);
+        tile2.getChildren().add(sqr);
+        tile2.setOnMouseClicked(event -> tile.reveal());
+        grid[tile.getX()][tile.getY()] = sqr;
+        base.getChildren().add(tile2);
     }
     public static Pane startGame() {
         base = new Pane();

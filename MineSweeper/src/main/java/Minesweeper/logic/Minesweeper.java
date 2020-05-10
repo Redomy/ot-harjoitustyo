@@ -91,7 +91,7 @@ public class Minesweeper{
             for (int x = 0; x < xTiles; x++) {
                 boolean hasBomb = Math.random() < 0.2;
                 Tile tile = new Tile(x, y, hasBomb);     
-                MinesweeperUI.addTile(tile);
+                
                 grid[x][y] = tile;
             }
         }
@@ -100,12 +100,14 @@ public class Minesweeper{
             for (int x = 0; x < xTiles; x++) {
                 Tile tile = grid[x][y];
                 if (tile.bombStatus()) {
+                    MinesweeperUI.addTile(tile);
                     continue;
                 }
                 long bombsAround = getNeighbours(tile).stream().filter(t -> t.bombStatus()).count();
                 if (bombsAround > 0) {
                     tile.modifyText(String.valueOf(bombsAround));
                 }
+                MinesweeperUI.addTile(tile);
             }
         }
     }
