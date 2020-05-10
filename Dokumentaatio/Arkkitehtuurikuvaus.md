@@ -1,28 +1,28 @@
-Rakenne:
+# Rakenne:
 
 tällä hetkellä sovelluksen pakkausrakenteessa on kaksi pakkausta Minesweeper.ui ja Minesweeper.logic.
 Tarkoituksena on lisätä vielä yksi pakkaus tietokantoja ja pysyväistalletusta hoitavalle koodille.
 
-Käyttöliittymä:
+# Käyttöliittymä:
 
 Sovellukseni käyttöliittymässä on kolme eri näkymää:
-1:Miinaharavan peli näkymä
-2:Päävalikon näkymä
-3:Parhaitten pisteiden näkymä
+- Miinaharavan peli näkymä
+- Päävalikon näkymä
+- Parhaitten pisteiden näkymä
 Näkymät on toteutettu Scene olioina ja ne liitetään sovelluksen Stage olioon.
 Suurin osa käyttöliittymästä on toteutettu luokassa Minesweeper.ui.MinesweeperUI
 mutta osa on myös luokassa Minesweeper.logic.Tile
 On huomioitavaa myös, että sovelluksen tietokantoja hoitava koodi on myös käyttöliittymän pakkauksessa
 mutta se on tarkoitus sijoittaa omaan pakkaukseen.
 
-Sovelluslogiikka:
+# Sovelluslogiikka:
 
 Sovelluslogiikkaan kuuluu luokat Minesweeper ja Tile.
 Minesweeper luokka hoitaa pelin alustan teknisen luomisen, solujen luomisen ja tarjoaa soluille
 myös tärkeän metodin niiden ympäristön selvittämiseksi.
 Tile luokka taas kuvaa pelin soluja ja se myös määrittää mitä tapahtuu sen ympäristön soluille tietyssä tilanteessa.
 
-Pysyväistalletus:
+# Pysyväistalletus:
 
 Luokka DatabaseUser hoitaa tietokantaan tallentamisen ja lukemisen.
 Sovellus käyttää sqlite tietokantaa, johon tallennetaan nimiä ja pisteitä.
