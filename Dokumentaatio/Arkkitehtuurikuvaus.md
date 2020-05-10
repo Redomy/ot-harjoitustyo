@@ -54,3 +54,5 @@ parametreina annetaan pelaajan nimi ja pisteet. Metodi ei palauta mitään.
 #### Huippupisteiden luku tietokannasta
 Highscore-nappia painettaessa kutsutaan DatabaserUser luokan metodia getHighScores,
 joka palauttaa ArrayListinä viisi parasta tulosta. Nämä sitten näytetään pelaajalle.
+
+![Huippupisteet](getHighScores.png)
