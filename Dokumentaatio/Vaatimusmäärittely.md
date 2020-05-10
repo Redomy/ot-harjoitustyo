@@ -11,7 +11,7 @@ Sovelluksella on vain normaaleja käyttäjiä. Ei kuitenkaan kirjautumisvaihtoeh
 Pelillä on päävalikko, josta voi aloittaa uuden pelin tai katsoa parhaita pisteitä.
 ### Käyttöliittymäluonnos
 
-![Näkymärakenne](Näkymärakenne.png)
+![Näkymärakenne](näkymärakenne.png)
 
 # Toiminnallisuus
 
