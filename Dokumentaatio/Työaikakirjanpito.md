@@ -7,5 +7,6 @@
 pääsiäisloma - 21.4     Java ja sqlite toiminnallisuuden opettelua ja koodin parantamista.
 
 26.4-28.4      Tietokantojen implementointi sovellukseen ja käyttöliittymän parantaminen. 
+8.5-10.5        Koodin rakenteen parantaminen ja dokumentoinnin parantaminen.
 
-Aikaa käytetty yhteensä noin 25 tuntia.
+Aikaa käytetty yhteensä noin 30-35 tuntia.
