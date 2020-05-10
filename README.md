@@ -33,5 +33,7 @@ Suoritettava jar generoidaan komennolla:
 Checkstylen tarkistukset suoritetaan komennolla:
 
 #### mvn jxr:jxr checkstyle:checkstyle
-
 Jos haluat nähdä mahdolliset checkstyle virheet, avaa selaimella tiedosto: target/site/checkstyle.html
+
+### Javadoc
+Valitettavasti en itse saanut Javadocia toimimaan.
