@@ -9,9 +9,9 @@ Sovellukseni käyttöliittymässä on kolme eri näkymää:
 - Miinaharavan peli näkymä
 - Päävalikon näkymä
 - Parhaitten pisteiden näkymä
+
 Näkymät on toteutettu Scene olioina ja ne liitetään sovelluksen Stage olioon.
-Suurin osa käyttöliittymästä on toteutettu luokassa Minesweeper.ui.MinesweeperUI
-mutta osa on myös luokassa Minesweeper.logic.Tile
+Käyttöliittymä on toteutettu luokassa Minesweeper.ui.MinesweeperUI.
 On huomioitavaa myös, että sovelluksen tietokantoja hoitava koodi on myös käyttöliittymän pakkauksessa
 mutta se on tarkoitus sijoittaa omaan pakkaukseen.
 
