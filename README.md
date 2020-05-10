@@ -16,7 +16,7 @@ Kaikki komennot suoritetaan MineSweeper kansiosta.
 ### Testaus
 Testit voi suorittaa komennolla:
 
-#### mvn test
+    mvn test
 
 Testikattavuusraportti luodaan komennolla:
 
