@@ -1,6 +1,7 @@
 
 package Minesweeper.ui;
 
+import Minesweeper.database.DatabaseUser;
 import Minesweeper.logic.Minesweeper;
 import Minesweeper.logic.Tile;
 import java.sql.ResultSet;

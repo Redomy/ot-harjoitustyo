@@ -1,5 +1,5 @@
 
-package Minesweeper.ui;
+package Minesweeper.database;
 
 import java.sql.*;
 import java.util.ArrayList;
