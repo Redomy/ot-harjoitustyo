@@ -5,7 +5,7 @@ highscoreja pelaajalle.
 
 # Käyttäjät
 
-Sovelluksella on vain normaaleja käyttäjiä.
+Sovelluksella on vain normaaleja käyttäjiä. Ei kuitenkaan kirjautumisvaihtoehtoa.
 
 # Käyttöliittymä
 
@@ -13,8 +13,17 @@ Pelillä on päävalikko, josta voi aloittaa uuden pelin tai katsoa parhaita pis
 
 # Toiminnallisuus
 
-Käyttäjät voivat pelata klassista miinaharavaa ja tallentaa pisteensä muistiin tietokantaan. Alustavasti käyttäjät voi luoda oman tunnuksen
-ja kirjautua sille, mutta saatan tehdä sovelluksen myös ilman kirjautumista käyttäjälle, koska pelin luonne sen sallii.
+### Sovelluksen käynnistyessä
+Käynnistäessään sovelluksen, käyttäjä saa eteensä päävalikon, josta hän voi poistua sovelluksesta, aloittaa miinaharava-pelin
+tai katsoa huippupisteitä.
+### Miinaharavan pelaaminen
+Miinaharavan voi aloittaa painamalla play-nappia. Käyttäjä pääsee pelaamaan miinaharavaa ja pystyy keräämään pisteitä jokaisesta
+oikein valitusta ruudusta.
+### Pelin loppuminen
+Kun käyttäjä tai pelaaja valitsee ruudun, jossa on miina, peli loppuu siihen ja sovellus avaa näkymän, jossa kerrotaan kerätyt pisteet
+ja jos pelaaja haluaa ne tallentaa.
+### Huippupisteet
+Pelaaja voi nähdä kaikista parhaat kerätyt pisteet painamalla highscore-nappia, joka avaa näkymän viidet parhaat pisteet.
 
 
 # Jatkokehitysideoita
