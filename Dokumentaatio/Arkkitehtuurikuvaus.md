@@ -12,8 +12,6 @@ Sovellukseni käyttöliittymässä on neljä eri näkymää:
 
 Näkymät on toteutettu Scene olioina ja ne liitetään sovelluksen Stage olioon.
 Käyttöliittymä on toteutettu luokassa Minesweeper.ui.MinesweeperUI.
-On huomioitavaa myös, että sovelluksen tietokantoja hoitava koodi on myös käyttöliittymän pakkauksessa
-mutta se on tarkoitus sijoittaa omaan pakkaukseen.
 
 # Sovelluslogiikka:
 
