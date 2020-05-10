@@ -11,7 +11,8 @@ Valitettavasti pakkauksen Minesweeper.database luokan DatabaseUserille ei ole te
 implementoida tietokannalle testejä.
 
 ### Testauskattavuus
-
+Sovelluksen logiikan puoliset testit kattavat 89 prosenttia, mutta Minesweeper.database pakettia ei ole 
+kuitenkaan testattu.
 ![Testauskattavuus](Testauskattavuus.png)
 
 ## Järjestelmätestaus
